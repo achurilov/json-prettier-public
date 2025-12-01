@@ -80,12 +80,12 @@ body {
   border-left: 4px solid #f97316;
 }
 
+/* Steps */
+
 .step {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
-  gap: 12px 18px;
-  align-items: center;
-  padding: 14px 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
   border-top: 1px solid #e5e7eb;
 }
 
@@ -94,28 +94,15 @@ body {
   padding-top: 6px;
 }
 
-.step-reverse {
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-}
-
-.step-text h3 {
-  margin: 0 0 4px;
-  font-size: 1rem;
-}
-
-.step-text p {
-  margin: 0;
-  font-size: 0.92rem;
-  color: #4b5563;
-}
-
 .step-number {
+  flex: 0 0 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
-  width: 26px;
-  height: 26px;
+  margin-right: 10px;
+  margin-top: 2px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   background: #f97316;
   color: #ffffff;
@@ -123,14 +110,33 @@ body {
   font-size: 0.9rem;
 }
 
-.step-image img {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
+.step-body {
+  flex: 1;
 }
 
-.step-image-empty {
-  min-height: 0;
+.step-body h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.step-body p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+/* Screenshots – full card width */
+
+.step-image {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.step-image img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
 }
 
 .feature-list {
@@ -157,14 +163,5 @@ body {
   .hero {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .step,
-  .step-reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .step-image {
-    order: 2;
   }
 }
