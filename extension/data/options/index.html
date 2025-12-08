@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- SPDX-License-Identifier: MPL-2.0 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Options Page :: JSON Prettier</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <p class="note">To access JSON Prettier options, right-click on the action button to open the context menu.</p>
+  <h1>Sample</h1>
+  <p>This JSON appears when the editor is opened via the action button. Clear it to start with an empty editor.</p>
+  <textarea rows="10" id="sample" placeholder='Example:
+{
+  "string": "This is a sample string"
+}'></textarea>
+  <h1>Exception List</h1>
+  <textarea rows="10" id="exceptions" placeholder="List of hostnames, separated by commas, where this extension is disabled.
+
+Example: google.com, 127.0.0.1:8080"></textarea>
+  <p>
+    <input type="button" id="save" value="Save Options">
+    <span id="toast"></span>
+  </p>
+  <script type="text/javascript" src="/assets/js/constants.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
