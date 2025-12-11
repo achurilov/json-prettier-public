@@ -155,6 +155,7 @@ async function render() {
     }
   }
   document.documentElement.dataset.loaded = true;
+  afterRender();
 }
 
 /* start */

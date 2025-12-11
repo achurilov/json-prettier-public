@@ -21,14 +21,16 @@ const onMessage = (request, {tab}, response) => {
         files: [
           '/assets/theme/jse-theme-defaults.css',
           '/data/view/json-editor/theme/jse-theme-dark.css',
-          '/assets/theme/jse-theme-dark.css'
+          '/assets/theme/jse-theme-dark.css',
+          '/assets/styles.css'
         ]
       });
       await chrome.scripting.executeScript({
         target,
         files: [
-          '/data/view/json-editor/lossless-json.js',
+          '/assets/js/constants.js',
           '/assets/js/ui.js',
+          '/data/view/json-editor/lossless-json.js',
           '/data/view/inject.js'
         ]
       });
@@ -36,6 +38,9 @@ const onMessage = (request, {tab}, response) => {
   }
   else if (request.method === 'save-json') {
     saveJson(request);
+  }
+  else if (request.method === 'rate-extension') {
+    rateExtension(request);
   }
   else if (request.method === 'alternative-interface') {
     cache[tab.id] = request;
