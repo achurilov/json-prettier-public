@@ -119,7 +119,7 @@ body {
   font-size: 1rem;
 }
 
-.step-body p {
+.step-body p, .step-body li {
   margin: 0;
   font-size: 0.92rem;
   color: #4b5563;
