@@ -75,17 +75,20 @@
         <div class="step">
           <div class="step-number">*</div>
           <div class="step-body">
-            <h3>Enable Chrome to Access Local Files</h3>
+            <h3>Enable JSON Prettier for Local Files</h3>
             <p>
-              By default the Chrome browser does not allow extensions to access local files. 
-              If you want to use JSON Prettier for local files (locations of "file:///...", instead of "http://" or "https://"), 
-              you must configure Chrome to allow the access.
+              Chrome blocks extensions from reading local files by default.
+              JSON Prettier will <strong>only</strong> be able to work with local JSON files
+              if you explicitly turn on access for file:/// pages. You can turn it off anytime in the same place.
             </p>
             <ol>
               <li>Right-click the extension icon.</li>
               <li>Select <strong>Manage extension</strong> to open settings</li>
               <li>Enable <strong>Allow access to file URLs</strong> to toggle the option on.</li>
             </ol>  
+            <p>
+              Tip: If you don’t use JSON Prettier with local files, you can leave this off and the extension will still work on websites.
+            </p>
           </div>
         </div>
 
