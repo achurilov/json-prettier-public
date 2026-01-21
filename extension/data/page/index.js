@@ -30,6 +30,7 @@ else {
   chrome.storage.local.get({
     'sample': CONSTANTS.SAMPLE
   }).then(prefs => {
+    Analytics.fireEvent('json_sample');
     document.querySelector('pre').textContent = prefs.sample;
     next();
   });

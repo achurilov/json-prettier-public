@@ -9,6 +9,7 @@ chrome.tabs.onRemoved.addListener(tabId => delete cache[tabId]);
 
 const onMessage = (request, {tab}, response) => {
   if (request.method === 'convert') {
+    Analytics.fireEvent('json_convert');
     const target = {
       tabId: tab.id
     };
@@ -38,6 +39,13 @@ const onMessage = (request, {tab}, response) => {
   }
   else if (request.method === 'save-json') {
     saveJson(request);
+  }
+  else if (request.method === 'analytics-event') {
+    let params = {};
+    if ('eventParams' in request) {
+      params = request.eventParams;
+    }
+    Analytics.fireEvent(request.eventName, params = params);
   }
   else if (request.method === 'rate-extension') {
     rateExtension(request);

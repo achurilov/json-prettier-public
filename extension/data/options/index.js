@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MPL-2.0
 
+Analytics.fireEvent('options');
+
 const notify = (message, timeout = 750) => {
   self.toast.textContent = message;
   clearTimeout(notify.id);
